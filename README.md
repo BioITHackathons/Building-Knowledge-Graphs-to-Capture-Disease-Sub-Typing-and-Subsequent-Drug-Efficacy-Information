@@ -39,4 +39,7 @@
   
 #### Note: some answers are non-sensical, or at least decontextualized; indicating that some models likely need to be at least prompted
   
-
+![](BioGPT_large_screenshot.png?raw=true)
+  
+  
+  
