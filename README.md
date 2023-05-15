@@ -27,6 +27,16 @@
   2. StabilityLM (Stable Vicuna 13-b)
   3. Fabric GEM
   
+#### Questions we are asking the model:
+
+  * What diseases is rs6003 associated with?
+  * What environmental factors affect the penetrance of rs6003?
+  * What transcription factor pathways 
+  
 ### We will come up with a model to
   * tag discrepant assertions
   * calculate a consistency score
+  
+#### Note: some answers are non-sensical, or at least decontextualized; indicating that some models likely need to be at least prompted
+  
+
