@@ -1,6 +1,6 @@
 # Varmovinator
 
-![](Stable_vicuna_rs6003raw=true)
+![](Stable_vicuna_rs6003.png?raw=true)
 
 ## The world's best (and first) variant learning model validator (outside CAGI challenges).  
 
