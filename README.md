@@ -17,3 +17,14 @@
   
 1: opencravat
 2: uniprot
+
+  
+### We have selected the following three models to test:
+  
+  1. ChatGPT
+  2. StabilityLM
+  3. Fabric GEM
+  
+### We will come up with a model to
+  * tag discrepant assertions
+  * calculate a consistency score
