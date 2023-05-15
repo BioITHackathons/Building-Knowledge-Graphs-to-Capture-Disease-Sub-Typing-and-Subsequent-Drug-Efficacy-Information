@@ -22,7 +22,7 @@
 ### We have selected the following three models to test:
   
   1. ChatGPT
-  2. StabilityLM
+  2. StabilityLM (Stable Vicuna 13-b)
   3. Fabric GEM
   
 ### We will come up with a model to
