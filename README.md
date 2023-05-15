@@ -1,5 +1,7 @@
 # Varmovinator
 
+![](raw=true)
+
 ## The world's best (and first) variant learning model validator (outside CAGI challenges).  
 
 ### For a given variant, this will pull basic information from standard bioinformatic databases such as 
@@ -21,7 +23,7 @@
   
 ### We have selected the following three models to test:
   
-  1. ChatGPT
+  1. BioGPT
   2. StabilityLM (Stable Vicuna 13-b)
   3. Fabric GEM
   
