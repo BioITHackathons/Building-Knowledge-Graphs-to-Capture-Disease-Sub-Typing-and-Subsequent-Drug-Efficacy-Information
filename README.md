@@ -17,10 +17,10 @@
 * protein effects <sup>2<sup>
 * gene <sup>2</sup>
   
-1: opencravat
-2: uniprot
+1: Opencravat
+2: Uniprot
+3: LitVar
 
-  
 ### We have selected the following three models to test:
   
   1. BioGPT
@@ -29,9 +29,15 @@
   
 #### Questions we are asking the model:
 
-  * What diseases is rs6003 associated with?
-  * What environmental factors affect the penetrance of rs6003?
-  * What transcription factor pathways 
+  * What diseases is rsX associated with?
+  * Expand the text rsX
+  * What environmental factors affect the penetrance of rsX?
+  * What transcription factor pathways are affected by rsX?
+  
+##### X's tested in this case:
+  * rs6003
+  * rs80357914
+  * rs563410947
   
 ### We will come up with a model to
   * tag discrepant assertions
