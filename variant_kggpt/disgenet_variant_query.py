@@ -1,6 +1,7 @@
 import sqlite3
 import json
 from collections import defaultdict
+from graphviz import Digraph
 from utils import split_text, view_sqlitedb
 
 
