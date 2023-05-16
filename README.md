@@ -21,11 +21,15 @@
 2: Uniprot
 3: LitVar
 
+The data will be pulled using SPARQL. An example SPARQL query is included.
+  
+  
 ### We have selected the following three models to test:
   
   1. BioGPT
   2. StabilityLM (Stable Vicuna 13-b)
-  3. Fabric GEM
+  3. GPT4
+  3a. GPT4 prompted with a KG
   
 #### Questions we are asking the model:
 
