@@ -1,7 +1,7 @@
 import sqlite3
 import json
 from collections import defaultdict
-from utils import split_text
+from utils import split_text, view_sqlitedb
 
 
 DISGENET_DB_PATH = "choose the path"  # download from https://www.disgenet.org/downloads the db (DisGeNET SQLite 2020 - v7.0 or the latest version)
@@ -183,3 +183,19 @@ def get_disease_varaint_gene_graph(cursor, variant_id):
         print(f"Graph saved as 'graph_{variant_id}.png'")
     else:
         print("No matching variantNID found for the given variantID")
+
+
+if __name__ == "__main__":
+    variant_id = "rs6003"
+    db_file = DISGENET_DB_PATH
+    conn = sqlite3.connect(db_file)
+
+    # Create a cursor object
+    cursor = conn.cursor()
+    view_sqlitedb(cursor)
+    evidences = get_evidences(cursor, variant_id)
+    print(evidences)
+
+    get_disease_varaint_gene_graph(cursor, variant_id)
+
+    conn.close()
