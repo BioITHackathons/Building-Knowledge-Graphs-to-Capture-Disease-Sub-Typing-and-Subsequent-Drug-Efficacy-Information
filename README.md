@@ -21,7 +21,7 @@
 2: Uniprot
 3: LitVar
 
-The data will be pulled using SPARQL. An example SPARQL query is included.
+### The data will be pulled using SPARQL. An example SPARQL query is included.
   
   
 ### We have selected the following three models to test:
