@@ -1,0 +1,100 @@
+# ===========================================================================
+#
+#                            PUBLIC DOMAIN NOTICE
+#               National Center for Biotechnology Information
+#
+#  This software/database is a "United States Government Work" under the
+#  terms of the United States Copyright Act.  It was written as part of
+#  the author's official duties as a United States Government employee and
+#  thus cannot be copyrighted.  This software/database is freely available
+#  to the public for use. The National Library of Medicine and the U.S.
+#  Government have not placed any restriction on its use or reproduction.
+#
+#  Although all reasonable efforts have been taken to ensure the accuracy
+#  and reliability of the software and data, the NLM and the U.S.
+#  Government do not and cannot warrant the performance or results that
+#  may be obtained by using this software or data. The NLM and the U.S.
+#  Government disclaim all warranties, express or implied, including
+#  warranties of performance, merchantability or fitness for any particular
+#  purpose.
+#
+#  Please cite the authors in any work or product based on this material :
+#
+#  1. Allot A, Peng Y, Wei CH, Lee K, Phan L, Lu Z.
+#  LitVar: a semantic search engine for linking genomic variant data in PubMed and PMC.
+#  Nucleic Acids Res. 2018;46(W1):W530–W536.
+#
+#  2. Wei CH, Phan L, Feltz J, Maiti R, Hefferon T, Lu Z.
+#  tmVar 2.0: integrating genomic variant information from literature with dbSNP
+#  and ClinVar for precision medicine. Bioinformatics. 2018;34(1):80–87.
+#
+# ==========================================================================
+# pmid	title	journal
+30446716	Inherited genetic predispositions in F13A1 and F13B genes predict abdominal adhesion formation: identification of gender prognostic indicators	Sci Rep
+33317138	Relation of alpha2-Antiplasmin Genotype and Genetic Determinants of Fibrinogen Synthesis and Fibrin Clot Formation with Vascular Endothelial Growth Factor Level in Axial Spondyloarthritis	Int J Mol Sci
+25569091	Factor XIII B Subunit Polymorphisms and the Risk of Coronary Artery Disease	Int J Mol Sci
+25384012	Common FXIII and Fibrinogen Polymorphisms in Abdominal Aortic Aneurysms	PLoS One
+29334895	Challenges imposed by minor reference alleles on the identification and reporting of clinical variants from exome data	BMC Genomics
+18541031	The NEI/NCBI dbGAP database: Genotypes and haplotypes that may specifically predispose to risk of neovascular age-related macular degeneration	BMC Med Genet
+34187873	Predictive value of C-reactive protein for radiographic spinal progression in axial spondyloarthritis in dependence on genetic determinants of fibrin clot formation and fibrinolysis	RMD Open
+29769590	Low factor XIII levels after intravenous thrombolysis predict short-term mortality in ischemic stroke patients	Sci Rep
+37059930	Identification of a novel mutation in the factor XIII A subunit in a patient with inherited factor XIII deficiency.	Int J Hematol
+35873600	Searching for Genetic Biomarkers for Hereditary Angioedema Due to C1-Inhibitor Deficiency (C1-INH-HAE).	Front Allergy
+15046636	A SNP-centric database for the investigation of the human genome	BMC Bioinformatics
+34234378	Decreased clot burden is associated with factor XIII Val34Leu polymorphism and better functional outcomes in acute ischemic stroke patients treated with intravenous thrombolysis	PLoS One
+23582991	Genetic influences on the outcome of anti-vascular endothelial growth factor treatment in neovascular age-related macular degeneration.	Ophthalmology
+36439023	Editorial: C1 inhibitor deficiency and angioedema	Front Allergy
+21273692	Comparing genetic ancestry and self-reported race/ethnicity in a multiethnic population in New York City	J Genet
+18654799	Exploration of the utility of ancestry informative markers for genetic association studies of African Americans with type 2 diabetes and end stage renal disease	Hum Genet
+21592109	Wide disparity in genetic admixture among Mexican Americans from San Antonio, TX	Ann Hum Genet
+21754915	Capitalizing on Admixture in Genome-Wide Association Studies: A Two-Stage Testing Procedure and Application to Height in African-Americans	Front Genet
+31340840	Phenotype and genotype of FXIII deficiency in two unrelated probands: identification of a novel F13A1 large deletion mediated by complex rearrangement	Orphanet J Rare Dis
+34506591	Important roles of the human leukocyte antigen class I and II molecules and their associated genes in the autoimmune coagulation factor XIII deficiency via whole-exome sequencing analysis	PLoS One
+19961953	The Pivotal Role of the Complement System in Aging and Age-related Macular Degeneration: Hypothesis Re-visited	Prog Retin Eye Res
+22812491	Development and characterization of a novel human Waldenstrom Macroglobulinemia cell line (RPCI-WM1; Roswell Park Cancer Institute-Waldenstrom Macroglobulinemia 1)	Leuk Lymphoma
+34447779	Certain Associations Between Iron Biomarkers and Total and gamma' Fibrinogen and Plasma Clot Properties Are Mediated by Fibrinogen Genotypes	Front Nutr
+18622144	Prothrombotic gene variation in patients with large and small vessel disease.	Neuroepidemiology
+21986109	Prothrombotic gene variants and mortality after cerebral ischemia of arterial origin.	Neuroepidemiology
+21976407	Genetic variability in DNA repair and cell cycle control pathway genes and risk of smoking-related lung cancer	Mol Carcinog
+29700787	Exploring the Use of Molecular Biomarkers for Precision Medicine in Age-Related Macular Degeneration	Mol Diagn Ther
+24219164	Effect of a poly(ADP-ribose) polymerase-1 inhibitor against esophageal squamous cell carcinoma cell lines	Cancer Sci
+32637948	Genetic architecture of host proteins interacting with SARS-CoV-2	bioRxiv
+29685792	Genomic Response to Vitamin D Supplementation in the Setting of a Randomized, Placebo-Controlled Trial	EBioMedicine
+25496518	Whole exome sequencing of a single osteosarcoma case:integrative analysis with whole transcriptome RNA-seq data	Hum Genomics
+31597922	Distinctive mutational spectrum and karyotype disruption in long-term cisplatin-treated urothelial carcinoma cell lines	Sci Rep
+27251275	Proteogenomics connects somatic mutations to signaling in breast cancer	Nature
+18043751	Admixture Mapping Provides Evidence of Association of the VNN1 Gene with Hypertension	PLoS One
+28240269	Connecting genetic risk to disease end points through the human blood plasma proteome	Nat Commun
+25887915	Whole genome sequencing of an ethnic Pathan (Pakhtun) from the north-west of Pakistan	BMC Genomics
+21980494	Genetics of Venous Thrombosis: Insights from a New Genome Wide Association Study	PLoS One
+26549847	Generation of a High Number of Healthy Erythroid Cells from Gene-Edited Pyruvate Kinase Deficiency Patient-Specific Induced Pluripotent Stem Cells	Stem Cell Reports
+29974678	A likely pathogenic variant putatively affecting splicing of PIGA identified in a multiple congenital anomalies hypotonia-seizures syndrome 2 (MCAHS2) family pedigree via whole-exome sequencing	Mol Genet Genomic Med
+23940728	AMD-Associated Genes Encoding Stress-Activated MAPK Pathway Constituents Are Identified by Interval-Based Enrichment Analysis	PLoS One
+26808113	High-density genotyping of immune-related loci identifies new SLE risk variants in individuals with Asian ancestry	Nat Genet
+24479488	Integrative genomic analysis identifies epigenetic marks that mediate genetic risk for epithelial ovarian cancer	BMC Med Genomics
+20144966	African ancestry allelic variation at the MYH9 gene contributes to increased susceptibility to non-diabetic end-stage kidney disease in Hispanic Americans	Hum Mol Genet
+28569743	Sources of discordance among germ-line variant classifications in ClinVar	Genet Med
+30814510	Organoids as a new model for improving regenerative medicine and cancer personalized therapy in renal diseases	Cell Death Dis
+26659599	Reproducible Analysis of Post-Translational Modifications in Proteomes:Application to Human Mutations	PLoS One
+29510755	Whole exome sequencing in three families segregating a pediatric case of sarcoidosis	BMC Med Genomics
+25333361	Exome Sequencing Is an Efficient Tool for Variant Late-Infantile Neuronal Ceroid Lipofuscinosis Molecular Diagnosis	PLoS One
+29079728	PLATO software provides analytic framework for investigating complexity beyond genome-wide association studies	Nat Commun
+32758128	Exploring the possibility of predicting human head hair greying from DNA using whole-exome and targeted NGS data	BMC Genomics
+25668207	Genetic Investigation of Bisphosphonate-Related Osteonecrosis of Jaw (BRONJ) via Whole Exome Sequencing and Bioinformatics	PLoS One
+32457125	In-depth plasma proteomics reveals increase in circulating PD-1 during anti-PD-1 immunotherapy in patients with metastatic cutaneous melanoma	J Immunother Cancer
+30389958	X-linked ADGRG2 mutation and obstructive azoospermia in a large Pakistani family	Sci Rep
+30894629	A reference collection of patient-derived cell line and xenograft models of proneural, classical and mesenchymal glioblastoma	Sci Rep
+30937429	An enhanced workflow for variant interpretation in UniProtKB/Swiss-Prot improves consistency and reuse in ClinVar	Database (Oxford)
+32046637	Next-generation sequencing identified novel Desmoplakin frame-shift variant in patients with Arrhythmogenic cardiomyopathy	BMC Cardiovasc Disord
+31358043	A validated single-cell-based strategy to identify diagnostic and therapeutic targets in complex diseases	Genome Med
+23151582	Analyses of pig genomes provide insight into porcine demography and evolution	Nature
+18704161	Genetic Variation in an Individual Human Exome	PLoS Genet
+25101798	High-density Genotyping of Immune Loci in Kawasaki Disease and IVIG Treatment Response in European-American Case-parent Trio Study	Genes Immun
+20861866	Genome-wide association identifies SKIV2L and MYRIP as protective factors for age-related macular degeneration	Genes Immun
+30958262	In-depth human plasma proteome analysis captures tissue proteins and transfer of protein variants across the placenta	Elife
+25058410	Cuba: Exploring the History of Admixture and the Genetic Basis of Pigmentation Using Autosomal and Uniparental Markers	PLoS Genet
+32697988	Human Labor Pain Is Influenced by the Voltage-Gated Potassium Channel KV6.4 Subunit	Cell Rep
+27512948	Three-dimensional modelling identifies novel genetic dependencies associated with breast cancer progression in the isogenic MCF10 model	J Pathol
+24367280	Autozygome Sequencing Expands the Horizon of Human Knockout Research and Provides Novel Insights into Human Phenotypic Variation	PLoS Genet
+26826707	The Effects of Sequence Variation on Genome-wide NRF2 Binding:New Target Genes and Regulatory SNPs	Nucleic Acids Res
+18518984	Genome-wide survey of allele-specific splicing in humans	BMC Genomics
