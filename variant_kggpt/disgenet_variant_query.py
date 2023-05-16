@@ -4,7 +4,7 @@ from collections import defaultdict
 from utils import split_text
 
 
-DISGENET_DB_PATH = "choose the path"
+DISGENET_DB_PATH = "choose the path"  # download from https://www.disgenet.org/downloads the db (DisGeNET SQLite 2020 - v7.0 or the latest version)
 
 
 def query_all_variant(cursor, variant_id, print_results=True):
