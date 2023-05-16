@@ -2,6 +2,9 @@ PREFIX cvo:  <http://purl.jp/bio/10/clinvar/>
 PREFIX dct:  <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sio:    <http://semanticscience.org/resource/>
+PREFIX m2r: <http://med2rdf.org/ontology/med2rdf#>
+PREFIX tgvo: <http://togovar.biosciencedbc.jp/vocabulary/>
+
 
 SELECT * 
 WHERE { 
@@ -36,10 +39,28 @@ WHERE {
             ?_ic_list cvo:interpreted_condition ?_interpreted_condition .
                 ?_interpreted_condition rdfs:label ?condition .
 
+            OPTIONAL {
+            ?_interpreted_condition dct:source ?db ;
+                dct:identifier ?medgen .
+            FILTER(?db IN ("MedGen"))
+        }
+
+        GRAPH <http://togovar.biosciencedbc.jp/variant/annotation/ensembl> {
+          OPTIONAL {
+            ?variant tgvo:hasConsequence/tgvo:gene ?gene ;
+              tgvo:hasConsequence/tgvo:hgnc ?hgnc .
+            FILTER STRSTARTS(STR(?gene), "http://rdf.ebi.ac.uk/resource/ensembl/ENSG")
+          }
+        }
+
+        OPTIONAL {
+      ?hgnc rdfs:label ?symbol .
+    }
     OPTIONAL {
-      ?_interpreted_condition dct:source ?db ;
-        dct:identifier ?medgen .
-      FILTER(?db IN ("MedGen"))
+      ?hgnc dct:description ?approved_name .
+    }
+    OPTIONAL {
+      ?hgnc skos:altLabel ?synonym .
     }
 
     }       
