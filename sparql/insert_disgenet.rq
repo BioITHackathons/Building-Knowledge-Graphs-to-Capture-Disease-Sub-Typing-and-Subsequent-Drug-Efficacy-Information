@@ -21,32 +21,27 @@ PREFIX dto: <http://diseasetargetontology.org/dto/>
 PREFIX geno: <http://purl.obolibrary.org/obo/geno/>
 
 
-CONSTRUCT {
+INSERT {
    GRAPH <http://varmovinator.org> {
-       ?variant a so:0001060 ; 
-               so:associated_with ?gene ;
-                        ^sio:SIO_000628 ?vda .
-                    ?vda dcterms:description ?description .
-                    ?gda sio:SIO_000628 ?gene ;
-                        sio:SIO_000253 ?source .
-                    ?source dcterms:title ?source_title .
-                    ?gene sio:SIO_000205 ?gene_symbol .
-                    ?gene_symbol rdfs:label ?symbol_label .
-                    ?gda sio:SIO_000628 ?disease .
-                    ?disease rdfs:label ?disease_label .
+        ?vda ?p2 ?o2 .
+        ?source dcterms:title ?source_title .
+        ?gene sio:SIO_000205 ?gene_symbol .
+        ?gene_symbol rdfs:label ?symbol_label .
+        ?gda sio:SIO_000628 ?disease .
+        ?disease rdfs:label ?disease_label .
    }
 } WHERE {
     SERVICE <http://rdf.disgenet.org/sparql/> {
         select * where {
             GRAPH <http://rdf.disgenet.org> {
-                SELECT DISTINCT ?variant ?symbol_label ?disease_label ?source_title ?vda ?description
-                
+                SELECT *
                 WHERE {
                     VALUES ?variant { <http://identifiers.org/dbsnp/rs6003> }            
                     ?variant a so:0001060 ; 
                         so:associated_with ?gene ;
                         ^sio:SIO_000628 ?vda .
-                    ?vda dcterms:description ?description .
+                    ?vda dcterms:description ?description ;
+                         ?p2 ?o2 .
                     ?gda sio:SIO_000628 ?gene ;
                         sio:SIO_000253 ?source .
                     ?source dcterms:title ?source_title .

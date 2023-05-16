@@ -1,0 +1,891 @@
+@prefix agg: <http://jena.apache.org/ARQ/function/aggregate#> .
+@prefix sail: <http://www.openrdf.org/config/sail#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix path: <http://www.ontotext.com/path#> .
+@prefix array: <http://www.w3.org/2005/xpath-functions/array> .
+@prefix apf: <http://jena.apache.org/ARQ/property#> .
+@prefix rep: <http://www.openrdf.org/config/repository#> .
+@prefix map: <http://www.w3.org/2005/xpath-functions/map> .
+@prefix sr: <http://www.openrdf.org/config/repository/sail#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix list: <http://jena.apache.org/ARQ/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ofn: <http://www.ontotext.com/sparql/functions/> .
+@prefix geoext: <http://rdf.useekm.com/ext#> .
+@prefix graphdb: <http://www.ontotext.com/config/graphdb#> .
+@prefix math: <http://www.w3.org/2005/xpath-functions/math> .
+@prefix omgeo: <http://www.ontotext.com/owlim/geo#> .
+
+<http://varmovinator.org> {
+  <http://identifiers.org/dbsnp/rs6003> a <http://purl.obolibrary.org/obo/SO_0001060>,
+      <http://purl.obolibrary.org/obo/SO_0001583>;
+    rdfs:comment "(Genetic) Variant [dbsnp:rs6003] associated with at least one disease in DisGeNET. Variants are identified by the NCBI dbSNP ID."@en;
+    rdfs:label "rs6003 [dbsnp:rs6003]"@en;
+    rdfs:seeAlso <http://www.snpedia.com/index.php/rs6003>, <http://www.ensembl.org/Homo_sapiens/Variation/Explore?v=rs6003>,
+      <http://www.ncbi.nlm.nih.gov/clinvar/?term=rs6003>, <http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=rs6003>;
+    <http://purl.org/dc/terms/identifier> "dbsnp:rs6003";
+    <http://purl.org/dc/terms/title> "rs6003"@en;
+    <http://www.w3.org/2004/02/skos/core#exactMatch> <http://bio2rdf.org/dbsnp:rs6003>;
+    <http://purl.obolibrary.org/obo/SO_associated_with> <http://identifiers.org/ncbigene/2165>;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/variant>;
+    <http://semanticscience.org/resource/SIO_000061> <http://rdf.disgenet.org/resource/variant.chromosome/dbsnp:rs6003_CHR>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/disease.specificity/dbsnp:rs6003_DSI_DisGeNETIndex>,
+      <http://rdf.disgenet.org/resource/disease.pleiotropy/dbsnp:rs6003_DPI_DisGeNETIndex>;
+    <http://semanticscience.org/resource/SIO_000223> <http://rdf.disgenet.org/resource/variant.alternative/vsap:268542>,
+      <http://rdf.disgenet.org/resource/variant.alternative/vsap:268543>, <http://rdf.disgenet.org/resource/variant.alternative/vsap:268544>,
+      <http://rdf.disgenet.org/resource/variant.reference/vsap:268542>, <http://rdf.disgenet.org/resource/variant.reference/vsap:268543>,
+      <http://rdf.disgenet.org/resource/variant.reference/vsap:268544>;
+    <http://semanticscience.org/resource/SIO_000791> <http://rdf.disgenet.org/resource/variant.position/dbsnp:rs6003_CHR_POSIITON> .
+  
+  <http://rdf.disgenet.org/resource/vda/DGNb9a1102647b998a82ce3ed1bbe12af3f> a <http://semanticscience.org/resource/SIO_000897>;
+    rdfs:comment "Association between the variant [dbsnp:rs6003] and the disease [umls:C1861172] integrated into DisGeNET. Variant-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "rs6003 [dbsnp:rs6003] - Venous Thromboembolism [umls:C1861172] Association [disgenet:DGNb9a1102647b998a82ce3ed1bbe12af3f]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNb9a1102647b998a82ce3ed1bbe12af3f";
+    <http://purl.org/dc/terms/description> "[Factor XIIIA-V34L and factor XIIIB-H95R in venous thromboembolism in central Iran: protective and neutral.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/dbsnp/rs6003>,
+      <http://identifiers.org/ncbigene/2165>, <http://linkedlifedata.com/resource/umls/id/C1861172>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "rs6003 [dbsnp:rs6003] - Venous Thromboembolism [umls:C1861172] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/variantDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/vda/dbsnp:rs6003_umls:C1861172_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2014"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/24509329> .
+  
+  <http://rdf.disgenet.org/resource/vda/DGNa0bfb05954158848cbf32d3970738438> a <http://semanticscience.org/resource/SIO_000897>;
+    rdfs:comment "Association between the variant [dbsnp:rs6003] and the disease [umls:C0398623] integrated into DisGeNET. Variant-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "rs6003 [dbsnp:rs6003] - Thrombophilia [umls:C0398623] Association [disgenet:DGNa0bfb05954158848cbf32d3970738438]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNa0bfb05954158848cbf32d3970738438";
+    <http://purl.org/dc/terms/description> "[His95Arg was also investigated in the Leiden Thrombophilia Study, in which a similar difference was observed for 471 patients vs. 472 controls (18.5% vs. 14.0%), for a pooled odds ratio (OR) of 1.5 (CI95 1.1-2.0).]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/dbsnp/rs6003>,
+      <http://identifiers.org/ncbigene/2165>, <http://linkedlifedata.com/resource/umls/id/C0398623>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "rs6003 [dbsnp:rs6003] - Thrombophilia [umls:C0398623] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/variantDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/vda/dbsnp:rs6003_umls:C0398623_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2005"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/16241947> .
+  
+  <http://identifiers.org/ncbigene/2165> a <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16612>;
+    rdfs:comment "Gene [ncbigene:2165] associated with at least one disease in DisGeNET. Genes are identified by the NCBI Entrez Gene ID from the NCBI Gene Database, a database of the U.S. National Library of Medicine."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165]"@en;
+    rdfs:seeAlso <http://clinicaltrials.gov/ct2/results?term=F13B>, <http://www.snpedia.com/index.php/F13B>,
+      <https://decipher.sanger.ac.uk/search?q=F13B>, <http://monarchinitiative.org/gene/NCBIGene:2165>,
+      <http://projects.biotec.tu-dresden.de/gogene/gogene/Search/Detailed?t=biogps&type=Details&documentIdFragment=2165>,
+      <http://dga.nubic.northwestern.edu/pages/result.php?st=g2d&qn=F13B>, <http://biogps.org/#goto=genereport&id=2165>,
+      <http://cancer.sanger.ac.uk/cosmic/search?q=F13B>, <http://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=F13B>;
+    <http://purl.org/dc/terms/identifier> "ncbigene:2165";
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain"@en;
+    <http://semanticscience.org/resource/SIO_000205> <http://identifiers.org/hgnc.symbol/F13B>;
+    <http://www.w3.org/2004/02/skos/core#exactMatch> <http://identifiers.org/hgnc.symbol/F13B>,
+      <http://bio2rdf.org/genecards:F13B>, <http://identifiers.org/genatlas/F13B>, <http://identifiers.org/genewiki/2165>,
+      <http://linkedlifedata.com/resource/diseasome-gene/F13B>, <http://identifiers.org/genecards/F13B>,
+      <http://rdf.ncbi.nlm.nih.gov/pubchem/gene/GID2165>, <http://bio2rdf.org/geneid:2165>,
+      <http://identifiers.org/ctd.gene/2165>, <http://bio2rdf.org/genatlas:F13B>, <http://www4.wiwiss.fu-berlin.de/diseasome/resource/genes/F13B>,
+      <http://linkedlifedata.com/resource/entrezgene/id/2165>;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/gene>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/disease.pleiotropy/ncbigene:2165_DPI_DisGeNETIndex>,
+      <http://rdf.disgenet.org/resource/disease.specificity/ncbigene:2165_DSI_DisGeNETIndex>;
+    <http://semanticscience.org/resource/SIO_010078> <http://purl.uniprot.org/uniprot/P05160>;
+    <http://www.w3.org/2004/02/skos/core#closeMatch> <http://identifiers.org/uniprot/P05160> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNe095ae04a5b88d2009acdd990a805fdc> a <http://semanticscience.org/resource/SIO_001344>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0015530] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Hereditary Factor XIII Deficiency [umls:C0015530] Association [disgenet:DGNe095ae04a5b88d2009acdd990a805fdc]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNe095ae04a5b88d2009acdd990a805fdc";
+    <http://purl.org/dc/terms/description> "[Novel aspects of factor XIII deficiency.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0015530>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/ORPHANET>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Hereditary Factor XIII Deficiency [umls:C0015530] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0015530_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2011"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/21738029> .
+  
+  <http://rdf.disgenet.org/v7.0.0/void/ORPHANET> a <http://purl.org/dc/dcmitype/Dataset>,
+      <http://www.w3.org/ns/dcat#Distribution>;
+    <http://purl.org/dc/terms/description> "DisGeNET database v6.0 contains Orphanet distribution: ORPHANET-2017. Data was downloaded from the file http://www.orphadata.org/data/xml/en_product6.xml, file corresponding to version 1.2.4 / 4.1.6 [2016-04-08] (orientdb version), on February 22, 2018. Orphanet is an online rare disease and orphan drug data base (© INSERM 1997) is the reference portal for information on rare diseases and orphan drugs, for all audiences. Orphanet’s aim is to help improve the diagnosis, care and treatment of patients with rare diseases."@en,
+      "DisGeNET database v7.0 contains Orphanet distribution: ORPHANET-2017. Data was downloaded from the file http://www.orphadata.org/data/xml/en_product6.xml, file corresponding to version 1.2.4 / 4.1.6 [2016-04-08] (orientdb version), on February 22, 2018. Orphanet is an online rare disease and orphan drug data base (© INSERM 1997) is the reference portal for information on rare diseases and orphan drugs, for all audiences. Orphanet’s aim is to help improve the diagnosis, care and treatment of patients with rare diseases."@en;
+    <http://purl.org/dc/terms/title> "Orphanet 2017 Dataset Distribution"@en;
+    <http://purl.org/dc/terms/creator> <http://rdf.disgenet.org/v7.0.0/void/Orphanet>;
+    <http://purl.org/dc/terms/format> <http://www.iana.org/assignments/media-types/application/xhtml+xml>;
+    <http://xmlns.com/foaf/0.1/page> <http://www.orpha.net/>;
+    <http://purl.org/dc/terms/publisher> <http://rdf.disgenet.org/v7.0.0/void/Orphanet>;
+    <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by-nd/3.0/>;
+    <http://purl.org/ontology/wi/core#evidence> <http://rdf.disgenet.org/v7.0.0/void/source_evidence_curated>;
+    <http://www.w3.org/ns/prov#wasGeneratedBy> <http://purl.obolibrary.org/obo/ECO_0000218>;
+    <http://purl.org/pav/importedOn> "2017-02-22"^^xsd:date;
+    <http://purl.org/pav/version> "1.2.4 / 4.1.6 [2017-12-29] (orientdb version)";
+    <http://www.w3.org/ns/dcat#downloadURL> <http://www.orphadata.org/data/xml/en_product6.xml>;
+    <http://purl.org/dc/terms/alternative> "Orphanet, DisGeNET primary data source [disgenet:ORPHANET]"@en .
+  
+  <http://identifiers.org/hgnc.symbol/F13B> a <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43568>;
+    rdfs:comment "HGNC Gene Symbol [hgnc:F13B] that represents a gene in DisGeNET. HGNC Gene Symbols is a standard nomenclature for human genes assigned by the HUGO Gene Nomenclature Committee (HGNC), www.genenames.org."@en;
+    rdfs:label "F13B [hgnc:F13B]"@en;
+    <http://purl.org/dc/terms/identifier> "hgnc:F13B";
+    <http://purl.org/dc/terms/title> "F13B"@en;
+    <http://www.w3.org/2004/02/skos/core#exactMatch> <http://bio2rdf.org/hgnc.symbol:F13B>;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneSymbol> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN1cb3155fe500ce8ef03277b58da0b96e> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0149871] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Deep Vein Thrombosis [umls:C0149871] Association [disgenet:DGN1cb3155fe500ce8ef03277b58da0b96e]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN1cb3155fe500ce8ef03277b58da0b96e";
+    <http://purl.org/dc/terms/description> "[A novel polymorphism in the factor XIII B-subunit (His95Arg): relationship to subunit dissociation and venous thrombosis.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0149871>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/CTD_human>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Deep Vein Thrombosis [umls:C0149871] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0149871_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2005"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/16241947>;
+    <http://xmlns.com/foaf/0.1/homepage> <http://ctdbase.org/detail.go?type=gene&acc=2165&view=disease> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN2064d2efb655d30881c3a4fd87e506cb> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C2750481] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association [disgenet:DGN2064d2efb655d30881c3a4fd87e506cb]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN2064d2efb655d30881c3a4fd87e506cb";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C2750481>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/CTD_human>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C2750481_association_DisGeNETScore>;
+    <http://xmlns.com/foaf/0.1/homepage> <http://ctdbase.org/detail.go?type=gene&acc=2165&view=disease> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNc5afef07a694c29c37627454d58ad932> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0015530] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Hereditary Factor XIII Deficiency [umls:C0015530] Association [disgenet:DGNc5afef07a694c29c37627454d58ad932]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNc5afef07a694c29c37627454d58ad932";
+    <http://purl.org/dc/terms/description> "[A familial factor XIII subunit B deficiency.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0015530>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/CTD_human>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Hereditary Factor XIII Deficiency [umls:C0015530] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0015530_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "1990"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/2334637>;
+    <http://xmlns.com/foaf/0.1/homepage> <http://ctdbase.org/detail.go?type=gene&acc=2165&view=disease> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNaab3fd97190f94a9981904a72f055896> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0042487] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Venous Thrombosis [umls:C0042487] Association [disgenet:DGNaab3fd97190f94a9981904a72f055896]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNaab3fd97190f94a9981904a72f055896";
+    <http://purl.org/dc/terms/description> "[A novel polymorphism in the factor XIII B-subunit (His95Arg): relationship to subunit dissociation and venous thrombosis.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0042487>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/CTD_human>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Venous Thrombosis [umls:C0042487] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0042487_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2005"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/16241947>;
+    <http://xmlns.com/foaf/0.1/homepage> <http://ctdbase.org/detail.go?type=gene&acc=2165&view=disease> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN5f1ad496624f927967f287f4de1de9e1> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0269855] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Hematoma of cord [umls:C0269855] Association [disgenet:DGN5f1ad496624f927967f287f4de1de9e1]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN5f1ad496624f927967f287f4de1de9e1";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0269855>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Hematoma of cord [umls:C0269855] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0269855_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN903c3c953cab013fed2b7a9d1d35291c> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4022608] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Oral cavity bleeding [umls:C4022608] Association [disgenet:DGN903c3c953cab013fed2b7a9d1d35291c]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN903c3c953cab013fed2b7a9d1d35291c";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4022608>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Oral cavity bleeding [umls:C4022608] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4022608_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN1f4f5c44f4a0559f9ba6a9360198d4c8> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4022611] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Prolonged bleeding following circumcision [umls:C4022611] Association [disgenet:DGN1f4f5c44f4a0559f9ba6a9360198d4c8]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN1f4f5c44f4a0559f9ba6a9360198d4c8";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4022611>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Prolonged bleeding following circumcision [umls:C4022611] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4022611_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNc75d79933ddd855618105ab668aef56a> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0013491] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Ecchymosis [umls:C0013491] Association [disgenet:DGNc75d79933ddd855618105ab668aef56a]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNc75d79933ddd855618105ab668aef56a";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0013491>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Ecchymosis [umls:C0013491] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0013491_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN3c14e3d3fee63e0275af2b153bf1026d> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0014591] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Epistaxis [umls:C0014591] Association [disgenet:DGN3c14e3d3fee63e0275af2b153bf1026d]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN3c14e3d3fee63e0275af2b153bf1026d";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0014591>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Epistaxis [umls:C0014591] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0014591_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNa3ac61f4a3e937ae154c60878646edbe> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0578878] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Inflammation of large intestine [umls:C0578878] Association [disgenet:DGNa3ac61f4a3e937ae154c60878646edbe]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNa3ac61f4a3e937ae154c60878646edbe";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0578878>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Inflammation of large intestine [umls:C0578878] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0578878_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN967eac62ccbd7318d8b6a036056d6a90> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C1844374] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Persistent bleeding after trauma [umls:C1844374] Association [disgenet:DGN967eac62ccbd7318d8b6a036056d6a90]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN967eac62ccbd7318d8b6a036056d6a90";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C1844374>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Persistent bleeding after trauma [umls:C1844374] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C1844374_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNf50aae43b9b1b357917f09bdeabfafb5> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4021646] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Prolonged bleeding after surgery [umls:C4021646] Association [disgenet:DGNf50aae43b9b1b357917f09bdeabfafb5]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNf50aae43b9b1b357917f09bdeabfafb5";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4021646>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Prolonged bleeding after surgery [umls:C4021646] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4021646_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN22c14d26cff7aff8718c745de901db92> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C1697453] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Spontaneous hematomas [umls:C1697453] Association [disgenet:DGN22c14d26cff7aff8718c745de901db92]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN22c14d26cff7aff8718c745de901db92";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C1697453>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Spontaneous hematomas [umls:C1697453] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C1697453_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN018b5c3947fa4193987e9cacfddb1498> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4024692] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Reduced factor XIII activity [umls:C4024692] Association [disgenet:DGN018b5c3947fa4193987e9cacfddb1498]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN018b5c3947fa4193987e9cacfddb1498";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4024692>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Reduced factor XIII activity [umls:C4024692] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4024692_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN90c3d22d870cc36c1acd1906e2ba4a1c> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C1969572] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Prolonged bleeding after dental extraction [umls:C1969572] Association [disgenet:DGN90c3d22d870cc36c1acd1906e2ba4a1c]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN90c3d22d870cc36c1acd1906e2ba4a1c";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C1969572>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Prolonged bleeding after dental extraction [umls:C1969572] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C1969572_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN741ad45211b926063487bf09a02b5599> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0423798] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Increased tendency to bruise [umls:C0423798] Association [disgenet:DGN741ad45211b926063487bf09a02b5599]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN741ad45211b926063487bf09a02b5599";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0423798>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Increased tendency to bruise [umls:C0423798] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0423798_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN33fdcb4bcb59e687a45b60d799bc5052> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C2937358] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Cerebral Hemorrhage [umls:C2937358] Association [disgenet:DGN33fdcb4bcb59e687a45b60d799bc5052]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN33fdcb4bcb59e687a45b60d799bc5052";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C2937358>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Cerebral Hemorrhage [umls:C2937358] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C2937358_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN12c6e9d78147f09e6abc5bffe68ede28> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C1851789] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Poor wound healing [umls:C1851789] Association [disgenet:DGN12c6e9d78147f09e6abc5bffe68ede28]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN12c6e9d78147f09e6abc5bffe68ede28";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C1851789>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Poor wound healing [umls:C1851789] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C1851789_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN0b2fc9f4fc594dacac9f13f3a4785594> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C3279439] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Recurrent spontaneous abortion [umls:C3279439] Association [disgenet:DGN0b2fc9f4fc594dacac9f13f3a4785594]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN0b2fc9f4fc594dacac9f13f3a4785594";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C3279439>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Recurrent spontaneous abortion [umls:C3279439] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C3279439_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNf44b36f3167f31b180e06dee7c9a26fb> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0240412] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Muscle hematoma [umls:C0240412] Association [disgenet:DGNf44b36f3167f31b180e06dee7c9a26fb]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNf44b36f3167f31b180e06dee7c9a26fb";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0240412>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Muscle hematoma [umls:C0240412] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0240412_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNc32fd905d186c6b1f282ce1efe0d3abc> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0018924] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Hemarthrosis [umls:C0018924] Association [disgenet:DGNc32fd905d186c6b1f282ce1efe0d3abc]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNc32fd905d186c6b1f282ce1efe0d3abc";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0018924>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Hemarthrosis [umls:C0018924] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0018924_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN177e6655058ed5e4426f8e2f0628f0a5> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4023145] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Abnormal umbilical stump bleeding [umls:C4023145] Association [disgenet:DGN177e6655058ed5e4426f8e2f0628f0a5]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN177e6655058ed5e4426f8e2f0628f0a5";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4023145>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Abnormal umbilical stump bleeding [umls:C4023145] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4023145_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNa88a96446fdb55dd6bd13038e64b9633> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0032797] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Postpartum Hemorrhage [umls:C0032797] Association [disgenet:DGNa88a96446fdb55dd6bd13038e64b9633]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNa88a96446fdb55dd6bd13038e64b9633";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0032797>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Postpartum Hemorrhage [umls:C0032797] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0032797_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN014a4932317b46b2cb516f70114e1f39> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0023470] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Myeloid Leukemia [umls:C0023470] Association [disgenet:DGN014a4932317b46b2cb516f70114e1f39]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN014a4932317b46b2cb516f70114e1f39";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0023470>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Myeloid Leukemia [umls:C0023470] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0023470_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN692cc071b271ee842669af83852099b3> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0025323] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Menorrhagia [umls:C0025323] Association [disgenet:DGN692cc071b271ee842669af83852099b3]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN692cc071b271ee842669af83852099b3";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0025323>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Menorrhagia [umls:C0025323] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0025323_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNe6dd33e4a58e5c765c809f0c527e66c9> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0085605] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Liver Failure [umls:C0085605] Association [disgenet:DGNe6dd33e4a58e5c765c809f0c527e66c9]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNe6dd33e4a58e5c765c809f0c527e66c9";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0085605>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Liver Failure [umls:C0085605] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0085605_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN70825f2f01c2b16f0c746f532bdd4e63> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0017565] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Gingival Hemorrhage [umls:C0017565] Association [disgenet:DGN70825f2f01c2b16f0c746f532bdd4e63]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN70825f2f01c2b16f0c746f532bdd4e63";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0017565>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Gingival Hemorrhage [umls:C0017565] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0017565_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNfba5b58503df0755156b6403fd42322f> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4280712] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Delayed onset bleeding [umls:C4280712] Association [disgenet:DGNfba5b58503df0755156b6403fd42322f]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNfba5b58503df0755156b6403fd42322f";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4280712>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Delayed onset bleeding [umls:C4280712] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4280712_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN37c5a58261fd33945adefc94ab88f936> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4023143] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Bleeding with minor or no trauma [umls:C4023143] Association [disgenet:DGN37c5a58261fd33945adefc94ab88f936]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN37c5a58261fd33945adefc94ab88f936";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4023143>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/HPO>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Bleeding with minor or no trauma [umls:C4023143] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4023143_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN56b9addd1e2e07cb21946b4f7e17db1a> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0020179] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Huntington Disease [umls:C0020179] Association [disgenet:DGN56b9addd1e2e07cb21946b4f7e17db1a]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN56b9addd1e2e07cb21946b4f7e17db1a";
+    <http://purl.org/dc/terms/description> "[Moreover, the activity toward the Q(n) domains increases greatly as n is increased to 40 or beyond. tTGase mRNA and total TGase activity are elevated in HD brain.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0020179>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Huntington Disease [umls:C0020179] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0020179_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2002"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/11738472> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN89e140ed39ec92756c4168076737801e> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0684249] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Carcinoma of lung [umls:C0684249] Association [disgenet:DGN89e140ed39ec92756c4168076737801e]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN89e140ed39ec92756c4168076737801e";
+    <http://purl.org/dc/terms/description> "[Using a polyclonal anti-TGase 1 antibody prepared in our laboratory (TGase-lac), TGase 1 expression in normal bronchial epithelium, bronchial preinvasive lesions, and lung cancer was characterized.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0684249>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Carcinoma of lung [umls:C0684249] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0684249_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2003"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/12654631> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN7cec6d0c090ada1870e3bf326d14b6d4> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0016085] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Filariasis [umls:C0016085] Association [disgenet:DGN7cec6d0c090ada1870e3bf326d14b6d4]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN7cec6d0c090ada1870e3bf326d14b6d4";
+    <http://purl.org/dc/terms/description> "[In contrast, only 33% of sera from patients with clinical filariasis were reactive to rBmTG.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0016085>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Filariasis [umls:C0016085] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0016085_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2004"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/15127297> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN947ada90e941a0aa169b01558b9e48ed> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0376358] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Malignant neoplasm of prostate [umls:C0376358] Association [disgenet:DGN947ada90e941a0aa169b01558b9e48ed]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN947ada90e941a0aa169b01558b9e48ed";
+    <http://purl.org/dc/terms/description> "[Furthermore, a 3-fold androgen-induced upregulation of hTGP mRNA expression has been demonstrated in the recently developed human prostate cancer cell line, PC346C.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0376358>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Malignant neoplasm of prostate [umls:C0376358] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0376358_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "1996"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/8645175> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN4dc9da2047df66338e95730cbc74b1f7> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C1306460] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Primary malignant neoplasm of lung [umls:C1306460] Association [disgenet:DGN4dc9da2047df66338e95730cbc74b1f7]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN4dc9da2047df66338e95730cbc74b1f7";
+    <http://purl.org/dc/terms/description> "[Using a polyclonal anti-TGase 1 antibody prepared in our laboratory (TGase-lac), TGase 1 expression in normal bronchial epithelium, bronchial preinvasive lesions, and lung cancer was characterized.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C1306460>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Primary malignant neoplasm of lung [umls:C1306460] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C1306460_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2003"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/12654631> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNb3f9e221c9d24a4a12215ffb72034b39> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0600139] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Prostate carcinoma [umls:C0600139] Association [disgenet:DGNb3f9e221c9d24a4a12215ffb72034b39]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNb3f9e221c9d24a4a12215ffb72034b39";
+    <http://purl.org/dc/terms/description> "[Furthermore, a 3-fold androgen-induced upregulation of hTGP mRNA expression has been demonstrated in the recently developed human prostate cancer cell line, PC346C.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0600139>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Prostate carcinoma [umls:C0600139] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0600139_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "1996"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/8645175> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN53b77e5a72fb97b999824d12fcbf677d> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0751356] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Idiopathic Inflammatory Myopathies [umls:C0751356] Association [disgenet:DGN53b77e5a72fb97b999824d12fcbf677d]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN53b77e5a72fb97b999824d12fcbf677d";
+    <http://purl.org/dc/terms/description> "[Therefore, the targeting of TGase inhibition in IMs will be a challenging therapeutic approach that should be investigated in the near future.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0751356>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Idiopathic Inflammatory Myopathies [umls:C0751356] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0751356_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2004"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/14631123> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN1039a0ce5be5e42519f13854cc94ab5a> a <http://semanticscience.org/resource/SIO_001121>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0002395] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Alzheimer's Disease [umls:C0002395] Association [disgenet:DGN1039a0ce5be5e42519f13854cc94ab5a]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN1039a0ce5be5e42519f13854cc94ab5a";
+    <http://purl.org/dc/terms/description> "[Since TGase-mediated protein aggregation is implicated in polyglutamine ((CAG)(n)/Q(n) expansion) disorder apoptosis, and expanded Q(n) repeats are excellent TGase substrates, a role for TGase in AD is possible.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0002395>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Alzheimer's Disease [umls:C0002395] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0002395_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2001"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/11013236> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN756732e26f6fe2e5b27fbeec25597d3d> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0242379] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Malignant neoplasm of lung [umls:C0242379] Association [disgenet:DGN756732e26f6fe2e5b27fbeec25597d3d]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN756732e26f6fe2e5b27fbeec25597d3d";
+    <http://purl.org/dc/terms/description> "[Using a polyclonal anti-TGase 1 antibody prepared in our laboratory (TGase-lac), TGase 1 expression in normal bronchial epithelium, bronchial preinvasive lesions, and lung cancer was characterized.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0242379>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Malignant neoplasm of lung [umls:C0242379] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0242379_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2003"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/12654631> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN76604bbb599440fe4cf49608400144ab> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0023487] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Acute Promyelocytic Leukemia [umls:C0023487] Association [disgenet:DGN76604bbb599440fe4cf49608400144ab]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN76604bbb599440fe4cf49608400144ab";
+    <http://purl.org/dc/terms/description> "[The increase in type II TGase was not abolished by cycloheximide treatment, suggesting that synthesis of a protein intermediate was not required for the induction. t-RA did not significantly alter the rate of growth arrest and did not stimulate differentiation and type II TGase activity in NB4.306 cells, a t-RA-resistant subclone of the NB4 cell line, or in leukemic cells derived from two patients morphologically defined as APL but lacking the t(15;17).]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0023487>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Acute Promyelocytic Leukemia [umls:C0023487] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0023487_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "1996"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/8634442> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN3a883ad7903ff6cf2bd3f61ad62ae2d7> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C1285162] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Degenerative disorder [umls:C1285162] Association [disgenet:DGN3a883ad7903ff6cf2bd3f61ad62ae2d7]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN3a883ad7903ff6cf2bd3f61ad62ae2d7";
+    <http://purl.org/dc/terms/description> "[Together, these findings suggest that multiple TGase enzymes are involved in normal neuronal structure and function, but their elevated expression and cross-linking activity may also contribute to neuronal degenerative disease.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C1285162>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Degenerative disorder [umls:C1285162] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C1285162_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "1999"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/10521460> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNd6cc5811ed871ada574a583ebfa58bbb> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0042345] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Varicosity [umls:C0042345] Association [disgenet:DGNd6cc5811ed871ada574a583ebfa58bbb]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNd6cc5811ed871ada574a583ebfa58bbb";
+    <http://purl.org/dc/terms/description> "[The allele frequencies for F13B*2 and IF*A in PVV patients were significantly higher (F13B*2, p = 0.0047; IF*A, p = 0.0006) than those in healthy controls (n = 60).]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0042345>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Varicosity [umls:C0042345] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0042345_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "1991"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/1783414> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN32ba202fc44d20d9c5f4cfc37a6f28e2> a <http://semanticscience.org/resource/SIO_001123>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C4511230] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Bathing suit ichthyosis [umls:C4511230] Association [disgenet:DGN32ba202fc44d20d9c5f4cfc37a6f28e2]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN32ba202fc44d20d9c5f4cfc37a6f28e2";
+    <http://purl.org/dc/terms/description> "[Cryosections of healthy skin areas demonstrated an almost normal TGase activity, in contrast to the affected BSI skin, which only showed a cytoplasmic and clearly reduced TGase-1 activity.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C4511230>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Bathing suit ichthyosis [umls:C4511230] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C4511230_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2006"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/16968736> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN15a9c54065dadeeb6bc8a2aed4812ae1> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0392663] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Infection by Wuchereria bancrofti [umls:C0392663] Association [disgenet:DGN15a9c54065dadeeb6bc8a2aed4812ae1]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN15a9c54065dadeeb6bc8a2aed4812ae1";
+    <http://purl.org/dc/terms/description> "[ELISA studies showed that approximately 88% of 48 sera from healthy Indian patients living in a bancroftian filariasis endemic area were reactive with rBmTG.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0392663>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/BEFREE>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Infection by Wuchereria bancrofti [umls:C0392663] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0392663_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2004"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/15127297> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN63920fa372da72da51ee13022c16e958> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0027051] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Myocardial Infarction [umls:C0027051] Association [disgenet:DGN63920fa372da72da51ee13022c16e958]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN63920fa372da72da51ee13022c16e958";
+    <http://purl.org/dc/terms/description> "[Genetic variants of coagulation factor XIII, postmenopausal estrogen therapy, and risk of nonfatal myocardial infarction.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0027051>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/LHGDN>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Myocardial Infarction [umls:C0027051] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0027051_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2003"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/12456499> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN4bf31a20921be5422cc2c3d57533fc91> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0027051] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Myocardial Infarction [umls:C0027051] Association [disgenet:DGN4bf31a20921be5422cc2c3d57533fc91]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN4bf31a20921be5422cc2c3d57533fc91";
+    <http://purl.org/dc/terms/description> "[Factor XIIIA-V34L and factor XIIIB-H95R gene variants: effects on survival in myocardial infarction patients.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0027051>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/LHGDN>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Myocardial Infarction [umls:C0027051] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0027051_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2007"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/17515963> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN9fbc594e2afbf8c74abdc132ac96d938> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C0042344] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Varicose Ulcer [umls:C0042344] Association [disgenet:DGN9fbc594e2afbf8c74abdc132ac96d938]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN9fbc594e2afbf8c74abdc132ac96d938";
+    <http://purl.org/dc/terms/description> "[Prognostic role of factor XIII gene variants in nonhealing venous leg ulcers.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C0042344>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/LHGDN>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Varicose Ulcer [umls:C0042344] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C0042344_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2006"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/16945500> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN585bade302d86141ed5373bb5cba9b63> a <http://semanticscience.org/resource/SIO_001119>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C2750481] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association [disgenet:DGN585bade302d86141ed5373bb5cba9b63]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN585bade302d86141ed5373bb5cba9b63";
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C2750481>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/CLINVAR>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C2750481_association_DisGeNETScore> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN4ba9b9c0a68743b77c24134584d6e4f3> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C2750481] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association [disgenet:DGN4ba9b9c0a68743b77c24134584d6e4f3]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN4ba9b9c0a68743b77c24134584d6e4f3";
+    <http://purl.org/dc/terms/description> "[Two genetic defects in a patient with complete deficiency of the b-subunit for coagulation factor XIII.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C2750481>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/UNIPROT>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C2750481_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "1993"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/8324218> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN3629e3b1a647346bd66b7ebe65003501> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C2750481] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association [disgenet:DGN3629e3b1a647346bd66b7ebe65003501]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN3629e3b1a647346bd66b7ebe65003501";
+    <http://purl.org/dc/terms/description> "[Structural and functional influences of coagulation factor XIII subunit B heterozygous missense mutants.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C2750481>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/UNIPROT>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C2750481_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2015"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/26247044> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGNa683e814f071963deab2770ec1b21709> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C2750481] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association [disgenet:DGNa683e814f071963deab2770ec1b21709]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGNa683e814f071963deab2770ec1b21709";
+    <http://purl.org/dc/terms/description> "[Truncated mutant B subunit for factor XIII causes its deficiency due to impaired intracellular transportation.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C2750481>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/UNIPROT>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C2750481_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2001"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/11313256> .
+  
+  <http://rdf.disgenet.org/resource/gda/DGN64fdbf6ae2b64a1d29481e868d308250> a <http://semanticscience.org/resource/SIO_001122>;
+    rdfs:comment "Association between the gene [ncbigene:2165] and the disease [umls:C2750481] integrated into DisGeNET. Gene-disease associations are identified by the DisGeNET ID."@en;
+    rdfs:label "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association [disgenet:DGN64fdbf6ae2b64a1d29481e868d308250]"@en;
+    <http://purl.org/dc/terms/identifier> "disgenet:DGN64fdbf6ae2b64a1d29481e868d308250";
+    <http://purl.org/dc/terms/description> "[Mutations affecting disulphide bonds contribute to a fairly common prevalence of F13B gene defects: results of a genetic study in 14 families with factor XIII B deficiency.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165>,
+      <http://linkedlifedata.com/resource/umls/id/C2750481>;
+    <http://semanticscience.org/resource/SIO_000253> <http://rdf.disgenet.org/v7.0.0/void/UNIPROT>;
+    <http://purl.org/dc/terms/title> "coagulation factor XIII B chain [ncbigene:2165] - Factor XIII, B Subunit, Deficiency Of [umls:C2750481] Association"@en;
+    <http://rdfs.org/ns/void#inDataset> <http://rdf.disgenet.org/v7.0.0/void/geneDiseaseAssociation>;
+    <http://semanticscience.org/resource/SIO_000216> <http://rdf.disgenet.org/resource/gda/ncbigene:2165_umls:C2750481_association_DisGeNETScore>;
+    <http://purl.org/dc/terms/date> "2010"^^xsd:gYear;
+    <http://semanticscience.org/resource/SIO_000772> <http://identifiers.org/pubmed/20331752> .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0015530> rdfs:label "Hereditary Factor XIII Deficiency [umls:C0015530]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0149871> rdfs:label "Deep Vein Thrombosis [umls:C0149871]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C2750481> rdfs:label "Factor XIII, B Subunit, Deficiency Of [umls:C2750481]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0042487> rdfs:label "Venous Thrombosis [umls:C0042487]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0269855> rdfs:label "Hematoma of cord [umls:C0269855]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4022608> rdfs:label "Oral cavity bleeding [umls:C4022608]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4022611> rdfs:label "Prolonged bleeding following circumcision [umls:C4022611]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0013491> rdfs:label "Ecchymosis [umls:C0013491]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0014591> rdfs:label "Epistaxis [umls:C0014591]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0578878> rdfs:label "Inflammation of large intestine [umls:C0578878]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C1844374> rdfs:label "Persistent bleeding after trauma [umls:C1844374]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4021646> rdfs:label "Prolonged bleeding after surgery [umls:C4021646]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C1697453> rdfs:label "Spontaneous hematomas [umls:C1697453]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4023143> rdfs:label "Bleeding with minor or no trauma [umls:C4023143]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4280712> rdfs:label "Delayed onset bleeding [umls:C4280712]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0240412> rdfs:label "Muscle hematoma [umls:C0240412]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0085605> rdfs:label "Liver Failure [umls:C0085605]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4023145> rdfs:label "Abnormal umbilical stump bleeding [umls:C4023145]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0017565> rdfs:label "Gingival Hemorrhage [umls:C0017565]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0018924> rdfs:label "Hemarthrosis [umls:C0018924]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0025323> rdfs:label "Menorrhagia [umls:C0025323]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0032797> rdfs:label "Postpartum Hemorrhage [umls:C0032797]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0423798> rdfs:label "Increased tendency to bruise [umls:C0423798]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C1851789> rdfs:label "Poor wound healing [umls:C1851789]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C1969572> rdfs:label "Prolonged bleeding after dental extraction [umls:C1969572]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C2937358> rdfs:label "Cerebral Hemorrhage [umls:C2937358]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C3279439> rdfs:label "Recurrent spontaneous abortion [umls:C3279439]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4024692> rdfs:label "Reduced factor XIII activity [umls:C4024692]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0023470> rdfs:label "Myeloid Leukemia [umls:C0023470]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0020179> rdfs:label "Huntington Disease [umls:C0020179]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0684249> rdfs:label "Carcinoma of lung [umls:C0684249]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0016085> rdfs:label "Filariasis [umls:C0016085]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0376358> rdfs:label "Malignant neoplasm of prostate [umls:C0376358]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C1306460> rdfs:label "Primary malignant neoplasm of lung [umls:C1306460]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C4511230> rdfs:label "Bathing suit ichthyosis [umls:C4511230]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0042345> rdfs:label "Varicosity [umls:C0042345]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0023487> rdfs:label "Acute Promyelocytic Leukemia [umls:C0023487]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0242379> rdfs:label "Malignant neoplasm of lung [umls:C0242379]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0751356> rdfs:label "Idiopathic Inflammatory Myopathies [umls:C0751356]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0600139> rdfs:label "Prostate carcinoma [umls:C0600139]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C1285162> rdfs:label "Degenerative disorder [umls:C1285162]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0002395> rdfs:label "Alzheimer's Disease [umls:C0002395]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0392663> rdfs:label "Infection by Wuchereria bancrofti [umls:C0392663]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0027051> rdfs:label "Myocardial Infarction [umls:C0027051]"@en .
+  
+  <http://linkedlifedata.com/resource/umls/id/C0042344> rdfs:label "Varicose Ulcer [umls:C0042344]"@en .
+  
+  <http://rdf.disgenet.org/resource/vda/DGN0f2f57b39f8cf826bacfa0c8596ddcfb> <http://purl.org/dc/terms/description>
+      "[The p.His95Arg polymorphism did not influence the risk of CAS or MI.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165> .
+  
+  <http://rdf.disgenet.org/resource/vda/DGN408485b4e82d6421acdb45f12ef0aba1> <http://purl.org/dc/terms/description>
+      "[Seventeen single nucleotide polymorphisms (SNPs) in known AMD risk-associated genes including CFH (rs800292, rs3766404, rs1061170, rs2274700 and rs393955), HTRA1 (rs11200638), CFHR1-5 (rs10922153, rs16840639, rs6667243, and rs1853883), LOC387715/ARMS2 (rs3793917 and rs10490924), C3 (rs2230199 and rs1047286), C2 (rs547154), CFB (rs641153) and F13B (rs6003) were examined.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165> .
+  
+  <http://rdf.disgenet.org/resource/vda/DGN98792736961fcccc3be25d7574ceafee> <http://purl.org/dc/terms/description>
+      "[Factor XIIIA-V34L and factor XIIIB-H95R gene variants: effects on survival in myocardial infarction patients.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165> .
+  
+  <http://rdf.disgenet.org/resource/vda/DGN98140b61ea30cccf4b9b8c9a2e95de32> <http://purl.org/dc/terms/description>
+      "[The p.His95Arg polymorphism did not influence the risk of CAS or MI.]. Sentence from MEDLINE/PubMed, a database of the U.S. National Library of Medicine."@en;
+    <http://semanticscience.org/resource/SIO_000628> <http://identifiers.org/ncbigene/2165> .
+  
+  <http://rdf.disgenet.org/v7.0.0/void/CTD_human> <http://purl.org/dc/terms/title> "CTD_human 2018 Dataset Distribution"@en .
+  
+  <http://rdf.disgenet.org/v7.0.0/void/HPO> <http://purl.org/dc/terms/title> "HPO"@en .
+  
+  <http://rdf.disgenet.org/v7.0.0/void/BEFREE> <http://purl.org/dc/terms/title> "BeFree 2018 Dataset Distribution"@en .
+  
+  <http://rdf.disgenet.org/v7.0.0/void/LHGDN> <http://purl.org/dc/terms/title> "LHGDN 2009-03-31 Dataset Distribution"@en .
+  
+  <http://rdf.disgenet.org/v7.0.0/void/CLINVAR> <http://purl.org/dc/terms/title> "ClinVar 2018 Dataset Distribution"@en .
+  
+  <http://rdf.disgenet.org/v7.0.0/void/UNIPROT> <http://purl.org/dc/terms/title> "UniProt 2018 Dataset Distribution"@en .
+}
